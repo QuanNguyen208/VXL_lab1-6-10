@@ -11,5 +11,5 @@
 void clearAllClock();
 void AnalogClock(int num);
 void setNumberOnClock(int num);
-
+void clearNumberOnClock(int num);
 #endif /* INC_DISPLAY_H_ */

@@ -98,6 +98,7 @@ int main(void)
     /* USER CODE END WHILE */
 	  for(int i = 1; i <= 12; i++){
 	  		AnalogClock(i);
+	  		clearNumberOnClock(3);
 	  		if(i >= 12) i = 0;
 	  		HAL_Delay (1000);
 	  	}

@@ -1,3 +1,4 @@
 ../Core/Src/display.c:11:6:setNumberOnClock	16	static
 ../Core/Src/display.c:54:6:clearAllClock	8	static
 ../Core/Src/display.c:69:6:AnalogClock	16	static
+../Core/Src/display.c:244:6:clearNumberOnClock	16	static
