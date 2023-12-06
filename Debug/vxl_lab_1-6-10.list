@@ -1,5 +1,5 @@
 
-vxl_lab_1-5-10.elf:     file format elf32-littlearm
+vxl_lab_1-6-10.elf:     file format elf32-littlearm
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
@@ -29,23 +29,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY
  12 .comment      00000043  00000000  00000000  00020035  2**0
                   CONTENTS, READONLY
- 13 .debug_info   000029cb  00000000  00000000  00020078  2**0
+ 13 .debug_info   000029e1  00000000  00000000  00020078  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_abbrev 00000eef  00000000  00000000  00022a43  2**0
+ 14 .debug_abbrev 00000f08  00000000  00000000  00022a59  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_aranges 000003f0  00000000  00000000  00023938  2**3
+ 15 .debug_aranges 000003f8  00000000  00000000  00023968  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_rnglists 000002cb  00000000  00000000  00023d28  2**0
+ 16 .debug_rnglists 000002d2  00000000  00000000  00023d60  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_macro  00015742  00000000  00000000  00023ff3  2**0
+ 17 .debug_macro  00015742  00000000  00000000  00024032  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   00005097  00000000  00000000  00039735  2**0
+ 18 .debug_line   000050b9  00000000  00000000  00039774  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    00079996  00000000  00000000  0003e7cc  2**0
+ 19 .debug_str    000799a4  00000000  00000000  0003e82d  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_frame  00000d68  00000000  00000000  000b8164  2**2
+ 20 .debug_frame  00000d84  00000000  00000000  000b81d4  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 0000006f  00000000  00000000  000b8ecc  2**0
+ 21 .debug_line_str 0000006f  00000000  00000000  000b8f58  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -79,10 +79,10 @@ Disassembly of section .text:
  8000148:	08001844 	.word	0x08001844
 
 0800014c <AnalogClock>:
- *      Author: Admin
- */
-
-#include "main.h"
+	HAL_GPIO_WritePin ( CLOCK10_GPIO_Port , CLOCK10_Pin ,GPIO_PIN_SET );
+	HAL_GPIO_WritePin ( CLOCK11_GPIO_Port , CLOCK11_Pin ,GPIO_PIN_SET );
+	HAL_GPIO_WritePin ( CLOCK12_GPIO_Port , CLOCK12_Pin ,GPIO_PIN_SET );
+}
 
 void AnalogClock(int num){
  800014c:	b580      	push	{r7, lr}

@@ -34,40 +34,40 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := vxl_lab_1-5-10
+BUILD_ARTIFACT_NAME := vxl_lab_1-6-10
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-vxl_lab_1-5-10.elf \
+vxl_lab_1-6-10.elf \
 
 MAP_FILES += \
-vxl_lab_1-5-10.map \
+vxl_lab_1-6-10.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-vxl_lab_1-5-10.list \
+vxl_lab_1-6-10.list \
 
 OBJCOPY_HEX += \
-vxl_lab_1-5-10.hex \
+vxl_lab_1-6-10.hex \
 
 OBJCOPY_BIN += \
-vxl_lab_1-5-10.bin \
+vxl_lab_1-6-10.bin \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: vxl_lab_1-5-10.elf secondary-outputs
+main-build: vxl_lab_1-6-10.elf secondary-outputs
 
 # Tool invocations
-vxl_lab_1-5-10.elf vxl_lab_1-5-10.map: $(OBJS) $(USER_OBJS) C:\Users\Admin\STM32CubeIDE\workspace_1.7.0\Lab\ 1\vxl_lab_1-5-10\STM32F103C6UX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "vxl_lab_1-5-10.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\Admin\STM32CubeIDE\workspace_1.7.0\Lab 1\vxl_lab_1-5-10\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="vxl_lab_1-5-10.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+vxl_lab_1-6-10.elf vxl_lab_1-6-10.map: $(OBJS) $(USER_OBJS) C:\Users\Admin\STM32CubeIDE\workspace_1.7.0\Lab\ 1\vxl_lab_1-5-10\STM32F103C6UX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "vxl_lab_1-6-10.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\Admin\STM32CubeIDE\workspace_1.7.0\Lab 1\vxl_lab_1-5-10\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="vxl_lab_1-6-10.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -76,24 +76,24 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-vxl_lab_1-5-10.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "vxl_lab_1-5-10.list"
+vxl_lab_1-6-10.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "vxl_lab_1-6-10.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-vxl_lab_1-5-10.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "vxl_lab_1-5-10.hex"
+vxl_lab_1-6-10.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "vxl_lab_1-6-10.hex"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-vxl_lab_1-5-10.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "vxl_lab_1-5-10.bin"
+vxl_lab_1-6-10.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "vxl_lab_1-6-10.bin"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) default.size.stdout vxl_lab_1-5-10.bin vxl_lab_1-5-10.elf vxl_lab_1-5-10.hex vxl_lab_1-5-10.list vxl_lab_1-5-10.map
+	-$(RM) default.size.stdout vxl_lab_1-6-10.bin vxl_lab_1-6-10.elf vxl_lab_1-6-10.hex vxl_lab_1-6-10.list vxl_lab_1-6-10.map
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX) $(OBJCOPY_BIN)
