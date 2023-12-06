@@ -50,6 +50,8 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 /* USER CODE BEGIN PFP */
 void AnalogClock(int num);
+void clearAllClock();
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/

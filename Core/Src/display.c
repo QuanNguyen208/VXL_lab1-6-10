@@ -7,6 +7,9 @@
 
 #include "main.h"
 
+
+
+
 void clearAllClock() {
 	HAL_GPIO_WritePin ( CLOCK1_GPIO_Port , CLOCK1_Pin ,GPIO_PIN_SET );
 	HAL_GPIO_WritePin ( CLOCK2_GPIO_Port , CLOCK2_Pin ,GPIO_PIN_SET );
