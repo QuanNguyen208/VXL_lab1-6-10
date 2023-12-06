@@ -10,6 +10,6 @@
 
 void clearAllClock();
 void AnalogClock(int num);
-
+void setNumberOnClock(int num);
 
 #endif /* INC_DISPLAY_H_ */
