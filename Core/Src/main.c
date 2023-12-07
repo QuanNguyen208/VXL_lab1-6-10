@@ -49,9 +49,7 @@
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 /* USER CODE BEGIN PFP */
-void AnalogClock(int num);
-void clearAllClock();
-void setNumberOnClock(int num);
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -93,15 +91,23 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  int hour = 0, min = 0, sec = 0;
   while (1)
   {
     /* USER CODE END WHILE */
-	  for(int i = 1; i <= 12; i++){
-	  		AnalogClock(i);
-	  		clearNumberOnClock(3);
-	  		if(i >= 12) i = 0;
-	  		HAL_Delay (1000);
-	  	}
+	  sec++;
+	  	  if(sec >= 60){
+	  		  sec = 0;
+	  		  min++;
+	  	  }
+	  	  if(min >= 60){
+	  		  hour++;
+	  		  min = 0;
+	  	  }
+	  	  if(hour >= 24) hour = 0;
+	  	  //display
+	  	  clockDisplay(hour, min, sec);
+	  	  HAL_Delay (50);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

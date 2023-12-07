@@ -283,3 +283,30 @@ void clearNumberOnClock(int num){
 		break;
 	}
 }
+
+void clockDisplay(int hour, int min, int sec){
+	  int hourDis, minDis, secDis;
+	  if(sec%5 >= 3){
+	  	  secDis = sec/5+1;
+	  }
+	  else{
+          if(sec/5 == 0) secDis = 12;
+  	      else secDis = sec/5;
+	  }
+	  if(min%5 >= 3){
+		  minDis = min/5+1;
+	  }
+	  else{
+  	      if(min/5 == 0) minDis = 12;
+	 	  else minDis = min/5;
+	  }
+	  if(hour%12 == 0){
+	  	  hourDis = 12;
+	  }
+	  else hourDis = hour%12;
+
+	  clearAllClock();
+	  setNumberOnClock(secDis);
+	  setNumberOnClock(minDis);
+	  setNumberOnClock(hourDis);
+}
